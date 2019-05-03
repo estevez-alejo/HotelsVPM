@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //Version de Java 1.8 para tener compatibilidad con el soporte de expresiones lambda
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '26.0.2'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    /**********Dependencias con el resto de módulos****/
+    compile project(':domain')
+    /** *****************************************/
+    /*********Firebase****************/
+    //compile 'com.google.firebase:firebase-core:11.8.0'
+    compile 'com.google.firebase:firebase-auth:11.8.0'
+    compile 'com.google.firebase:firebase-storage:11.8.0'
+
+    /*********Google Sign In****************/
+    compile 'com.google.android.gms:play-services-auth:11.8.0'
+    /*********Facebook Sign In****************/
+    implementation 'com.facebook.android:facebook-login:[4,5)'
+
+    /*********Retrofit****************/
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+
+}
+//Sincronizar la aplicación con el Servidor de Objetos de Realm.
+//realm {
+//    syncEnabled = true;
+//}

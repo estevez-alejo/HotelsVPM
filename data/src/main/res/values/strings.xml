@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">data</string>
+    <string name="there_is_not_active_user">No hay usuario activo.</string>
+    <string name="apiBaseURL">https://hotelsmvp-f7449.firebaseio.com</string>
+    <string name="dataStorageBaseURL">https://firebasestorage.googleapis.com/v0/b/hotelsmvp-f7449.appspot.com</string>
+    <string name="error_save_user_local">No se ha podido guardar localmente el usuario.</string>
+
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "725469752081",
+    "firebase_url": "https://hotelsmvp-f7449.firebaseio.com",
+    "project_id": "hotelsmvp-f7449",
+    "storage_bucket": "hotelsmvp-f7449.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725469752081:android:2235d6b88f1d35b0",
+        "android_client_info": {
+          "package_name": "com.alejoestevez.hotelsmvp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725469752081-5qtr7as319n7ucoge2vq1qk2vla3egr3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alejoestevez.hotelsmvp",
+            "certificate_hash": "370e61de418cf3a2af707e09ae5e83608151d098"
+          }
+        },
+        {
+          "client_id": "725469752081-b0i3pa10c8qg7qns34kfjcsrce3j2ddt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbC6VAzQiRn-GlLFvWk6AE_ip7MRBHwDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725469752081-b0i3pa10c8qg7qns34kfjcsrce3j2ddt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

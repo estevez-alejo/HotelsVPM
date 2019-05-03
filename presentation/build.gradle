@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.alejoestevez.hotelsmvp"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //Version de Java 1.8 para tener compatibilidad con el soporte de expresiones lambda de capa DATA
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '26.0.2'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.0.2'
+    implementation 'com.android.support:design:26.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    /**********Dependencias con el resto de módulos****/
+    //Requiere dependencia del módulo domain
+    compile project(':domain')
+    //Requiere dependencia del módulo data
+    compile project(':data')
+    /** *****************************************/
+    /** *****************************************/
+    /*********Api Publica Dagger y Anotaciones****************/
+    compile 'com.google.dagger:dagger:2.13'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
+    compile 'com.google.dagger:dagger-android-support:2.13'
+    /** *****************************************/
+    /*********Java Rx Android - Programación Reactiva****************/
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    /*********Firebase****************/
+    //compile 'com.google.firebase:firebase-core:11.8.0'
+    compile 'com.google.firebase:firebase-auth:11.8.0'
+    /*********Google Sign In****************/
+    compile 'com.google.android.gms:play-services-auth:11.8.0'
+    /*********Facebook Sign In****************/
+    implementation 'com.facebook.android:facebook-login:[4,5)'
+    /*********ButterKnife****************/
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+
+    /**********Api de GSON********************/
+    compile 'com.google.code.gson:gson:2.8.2'
+
+    /*********Picasso************************/
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+}
+//Aplicamos el plugin de los servicios de google.
+apply plugin: 'com.google.gms.google-services'
